@@ -3,6 +3,8 @@ package com.meetingmanage.Service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.meetingmanage.Domain.MembersMes;
 
+import java.util.List;
+
 
 /**
  * (MeetingMembersmes)表服务接口
@@ -12,5 +14,10 @@ import com.meetingmanage.Domain.MembersMes;
  */
 public interface MembersMesService extends IService<MembersMes> {
 
+
+    List<MembersMes> GetByMeetingID(Integer meetingID);
+    Integer  GetMeetingNumbers(Integer meetingID);
+
+    void removeByStaffAndMeetingId(Integer staffID, Integer meetingID);
 }
 

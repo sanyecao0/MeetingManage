@@ -1,11 +1,11 @@
 package com.meetingmanage.Domain;
 
 
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+
 /**
  * (MeetingStaffmes)表实体类
  *
@@ -18,6 +18,9 @@ import com.baomidou.mybatisplus.annotation.TableName;
 @NoArgsConstructor
 @TableName("meeting_staffmes")
 public class StaffMes {
+    public StaffMes(String name) {
+    }
+
     public Integer getStaffid() {
         return staffid;
     }
@@ -27,11 +30,11 @@ public class StaffMes {
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.Name = name;
     }
 
     public String getPhoto() {
@@ -42,16 +45,16 @@ public class StaffMes {
         this.photo = photo;
     }
 
-    @TableId
+    @TableId(value = "StaffID",type = IdType.AUTO)
     private Integer staffid;
 
     //用户名
-    private String name;
+    @TableField(value = "StaffName")
+    private String Name;
+
     //头像
+    @TableField(value = "Photo",fill = FieldFill.INSERT)
     private String photo;
 
-
-
 }
-
 

@@ -1,14 +1,16 @@
 package com.meetingmanage.Service.impl;
 
 import com.meetingmanage.Service.UploadService;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.util.UUID;
 
+@Service("UploadService")
 public class UploadServiceImpl implements UploadService {
     @Override
-    public void uploadImg(MultipartFile img) throws Exception {
+    public String uploadImg(MultipartFile img) throws Exception {
         //判断文件类型
         //获取原始文件名
         String originalFilename = img.getOriginalFilename();
@@ -24,6 +26,7 @@ public class UploadServiceImpl implements UploadService {
         File destFile = new File(filePath);
         //调用MultipartFile的transferTo方法，将文件保存到指定位置
         img.transferTo(destFile);
+        return  filePath;
 
     }
 }

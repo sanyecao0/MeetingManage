@@ -24,7 +24,8 @@ public class StaffMesServiceImpl extends ServiceImpl<StaffMesMapper, StaffMes>  
     @Override
     public Page<StaffMes> FindStaffByNameFuzzy(String name,Integer pageNum,Integer pageSize) {
         QueryWrapper<StaffMes> queryWrapper = new QueryWrapper<StaffMes>();
-        queryWrapper.like(StringUtils.isNotBlank(name), "Name", name);
+        //System.out.println("模糊查找："+name);
+        queryWrapper.like(StringUtils.isNotBlank(name), "StaffName", name);
         //分页查询
         Page<StaffMes> StaffMesPage=new Page<StaffMes>(pageNum,pageSize);
         baseMapper.selectPage(StaffMesPage,queryWrapper);

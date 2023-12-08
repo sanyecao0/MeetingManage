@@ -20,6 +20,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 public class MeetingMes  {
     @TableId
     private Integer meetingid;
+    //会议名称
+    private String name;
 
     public Integer getMeetingid() {
         return meetingid;
@@ -29,18 +31,13 @@ public class MeetingMes  {
         this.meetingid = meetingid;
     }
 
-    public String getMeetingname() {
-        return meetingname;
+    public String getName() {
+        return name;
     }
 
-    public void setMeetingname(String meetingname) {
-        this.meetingname = meetingname;
+    public void setName(String name) {
+        this.name = name;
     }
-
-    //会议名称
-    private String meetingname;
-
-
 
 }
 

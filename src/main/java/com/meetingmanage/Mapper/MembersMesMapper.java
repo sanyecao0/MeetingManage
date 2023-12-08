@@ -2,6 +2,7 @@ package com.meetingmanage.Mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.meetingmanage.Domain.MembersMes;
+import org.apache.ibatis.annotations.Mapper;
 
 
 /**
@@ -10,6 +11,7 @@ import com.meetingmanage.Domain.MembersMes;
  * @author makejava
  * @since 2023-12-06 17:44:08
  */
+//@Mapper
 public interface MembersMesMapper extends BaseMapper<MembersMes> {
 
 }
